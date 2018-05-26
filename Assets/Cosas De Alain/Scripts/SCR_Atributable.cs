@@ -78,6 +78,7 @@ public class SCR_Atributable : MonoBehaviour
 
     public void CambiarAtributo(int atr)
     {
+        FindObjectOfType<GameManager>().SetObjeto(this.gameObject);
         switch (atr)
         {
             case 1:
