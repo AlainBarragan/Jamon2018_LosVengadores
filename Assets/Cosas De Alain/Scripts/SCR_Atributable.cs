@@ -16,12 +16,14 @@ public class SCR_Atributable : MonoBehaviour
     public ATRIBUTO atributo;
     public GameObject[] magnetico;
     public PhysicMaterial phMat, normal;
+    Rigidbody rb;
 
     bool startGravity;
 
     private void Start()
     {
-        startGravity = this.GetComponent<Rigidbody>().useGravity;
+        rb = this.GetComponent<Rigidbody>();
+        startGravity = rb.useGravity;
         atributo = ATRIBUTO.Neutral;
         this.GetComponent<BoxCollider>().material = normal;
     }
@@ -42,7 +44,7 @@ public class SCR_Atributable : MonoBehaviour
                 break;
             case ATRIBUTO.Gravedad:
                 {
-                    Flotar();
+                    //Flotar();
                 }
                 break;
             case ATRIBUTO.Rebotable:
@@ -54,7 +56,7 @@ public class SCR_Atributable : MonoBehaviour
 
     void Flotar()
     {
-        this.GetComponent<Rigidbody>().useGravity = false;
+        rb.useGravity = false;
         this.transform.Translate(Vector3.up * Time.deltaTime);
     }
 
@@ -69,7 +71,7 @@ public class SCR_Atributable : MonoBehaviour
                 Vector3 direction = (transform.position - magnetico[i].transform.position).normalized;
                 magnetico[i].GetComponent<Rigidbody>().MovePosition(magnetico[i].transform.position+(direction*2f * Time.deltaTime));
                 if (magnetico[i].GetComponent<scr_plataform>())
-                    magnetico[i].GetComponent<scr_plataform>().MovePlayer( new Vector3(direction.x,0f,direction.z) * 2f * Time.deltaTime);
+                    magnetico[i].GetComponent<scr_plataform>().MovePlayer( new Vector3(direction.x,0f,direction.z)* 1.8f*Time.deltaTime);
             }
         }
     }
@@ -91,30 +93,46 @@ public class SCR_Atributable : MonoBehaviour
         switch (atr)
         {
             case 1:
-                atributo = ATRIBUTO.Iman;
-                Debug.Log("Soy muy atractivo ;)");
+                {
+                    atributo = ATRIBUTO.Iman;
+                    Debug.Log("Soy muy atractivo ;)");
+                }
                 break;
             case 2:
-                atributo = ATRIBUTO.Girar;
-                Debug.Log("Estoy girando yay");
-                Girar();
+                {
+                    atributo = ATRIBUTO.Girar;
+                    Debug.Log("Estoy girando yay");
+                    Girar();
+                }
                 break;
             case 3:
-                atributo = ATRIBUTO.Rebotable;
-                Rebotable();
+                {
+                    atributo = ATRIBUTO.Rebotable;
+                    Rebotable();
+                }
                 break;
             case 4:
-                atributo = ATRIBUTO.Gravedad;
-                Debug.Log("Aqui todos Flotan");
+                {
+                    atributo = ATRIBUTO.Gravedad;
+                    rb.useGravity = !rb.useGravity;
+                    if (!rb.useGravity)
+                    {
+                        rb.AddForce(Vector3.up, ForceMode.Impulse);
+                    }
+                    Debug.Log("Aqui todos Flotan");
+                }
                 break;
             default:
-                atributo = ATRIBUTO.Neutral;
-                Debug.Log("Todo vuelve a la normalidad");
+                {
+                    atributo = ATRIBUTO.Neutral;
+                    Debug.Log("Todo vuelve a la normalidad");
+                }
                 break;
         }
+
         if (atributo != ATRIBUTO.Gravedad)
         {
-            this.GetComponent<Rigidbody>().useGravity = startGravity;
+            rb.useGravity = startGravity;
         }
 
         if (atributo != ATRIBUTO.Iman)

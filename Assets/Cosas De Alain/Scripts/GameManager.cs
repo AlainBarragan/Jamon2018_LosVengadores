@@ -8,8 +8,6 @@ public class GameManager : MonoBehaviour
 
     GameObject ObjetoAtributo;
 
-    public static int Leng = 0;
-
     private void Awake()
     {
         GM = this;
@@ -22,6 +20,9 @@ public class GameManager : MonoBehaviour
 
     public void SetObjeto(GameObject go)
     {
+        if (go == ObjetoAtributo)
+            return;
+
         if (ObjetoAtributo != null)
             ObjetoAtributo.GetComponent<SCR_Atributable>().CambiarAtributo(0);
         ObjetoAtributo = go;
