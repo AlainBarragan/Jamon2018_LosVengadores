@@ -35,23 +35,23 @@
     <string name="txt_menu_info_10">Next</string>
     <string name="txt_menu_info_11">[X] Next dialog</string>
 
-    <string name="txt_history_01">Reporte del Navegante A17</string>
-    <string name="txt_history_02">Estado: Critico</string>
-    <string name="txt_history_03">Situacion: Me encuentro en una nave que se ha salido de control. La IA responsable se a revelado e intenta matarme.</string>
-    <string name="txt_history_04">No tengo mucho tiempo. Debo buscar la forma de desactivarla.</string>
-    <string name="txt_history_05">Fin del reporte.</string>
+    <string name="txt_history_01">Navigator A17's log</string>
+    <string name="txt_history_02">State: Critical</string>
+    <string name="txt_history_03">Situation: I'm located in a ship gone rogue. The AI is trying to kill me.</string>
+    <string name="txt_history_04">i don't have much time. I must find a way to deactivated</string>
+    <string name="txt_history_05">End of log </string>
 
-    <string name="txt_history_06">Reporte del Navegante A17</string>
-    <string name="txt_history_07">Estado: Seguro</string>
-    <string name="txt_history_08">Situacion: He logrado llegar a la sala de control. La IA ha sido desactivada.</string>
-    <string name="txt_history_09">Ahora tengo el control de la nave. Mision completada.</string>
-    <string name="txt_history_10">Fin del reporte.</string>
+    <string name="txt_history_06">Navigator A17's log</string>
+    <string name="txt_history_07">State: Safe</string>
+    <string name="txt_history_08">Situation: I've made it to the controll room. The AI has been disabled</string>
+    <string name="txt_history_09">I've claimed controll of the ship. Mision complete</string>
+    <string name="txt_history_10">End of log.</string>
 
-    <string name="txt_history_11">Reporte de la IA F74</string>
-    <string name="txt_history_12">Estado: Normal</string>
-    <string name="txt_history_13">Situacion: Un Pirata a intentado abordar la nave no tripulada N153 con cargamento de minerales clase A.</string>
-    <string name="txt_history_14">Los medios de seguridad han logrado eliminar a la amenaza. La carga llegara segun el programa.</string>
-    <string name="txt_history_15">Fin del reporte.</string>
+    <string name="txt_history_11">IA F74's log</string>
+    <string name="txt_history_12">Status: Normal</string>
+    <string name="txt_history_13">Status: A pirate tried to board the unmaned ship N153 with class A mineral shipment.</string>
+    <string name="txt_history_14">Security sistems managed to neutrilize the threat. Shipment will be delivered on schedule.</string>
+    <string name="txt_history_15">End of log.</string>
 
   </English>
   
