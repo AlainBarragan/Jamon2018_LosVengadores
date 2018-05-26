@@ -62,6 +62,8 @@ public class SCR_Atributable : MonoBehaviour
             {
                 magnetico[i].GetComponent<Rigidbody>().useGravity = false;
                 magnetico[i].transform.position = Vector3.MoveTowards(magnetico[i].transform.position, this.transform.position, 5 * Time.deltaTime);
+                //Vector3 direction = (transform.position - magnetico[i].transform.position).normalized;
+                //magnetico[i].GetComponent<Rigidbody>().MovePosition(magnetico[i].transform.position+(direction * Time.deltaTime));
             }
         }
     }
