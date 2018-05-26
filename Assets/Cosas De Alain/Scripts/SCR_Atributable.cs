@@ -17,8 +17,11 @@ public class SCR_Atributable : MonoBehaviour
     public GameObject[] magnetico;
     public PhysicMaterial phMat, normal;
 
+    bool startGravity;
+
     private void Start()
     {
+        startGravity = this.GetComponent<Rigidbody>().useGravity;
         atributo = ATRIBUTO.Neutral;
         this.GetComponent<BoxCollider>().material = normal;
     }
@@ -111,7 +114,7 @@ public class SCR_Atributable : MonoBehaviour
         }
         if (atributo != ATRIBUTO.Gravedad)
         {
-            this.GetComponent<Rigidbody>().useGravity = true;
+            this.GetComponent<Rigidbody>().useGravity = startGravity;
         }
 
         if (atributo != ATRIBUTO.Iman)
@@ -120,7 +123,7 @@ public class SCR_Atributable : MonoBehaviour
             {
                 for (int i = 0; i < magnetico.Length; i++)
                 {
-                    magnetico[i].GetComponent<Rigidbody>().useGravity = true;
+                    magnetico[i].GetComponent<Rigidbody>().useGravity = startGravity;
                 }
             }
         }
