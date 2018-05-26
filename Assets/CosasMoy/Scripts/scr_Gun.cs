@@ -27,7 +27,7 @@ public class scr_Gun : MonoBehaviour {
         if (Input.GetButtonDown("NextW"))
         {
             TypeShoot++;
-            if (TypeShoot > 3)
+            if (TypeShoot > 4)
                 TypeShoot = 0;
             T_TypeW.text = TypeShoot.ToString();
         }
@@ -36,7 +36,7 @@ public class scr_Gun : MonoBehaviour {
         {
             TypeShoot--;
             if (TypeShoot < 0)
-                TypeShoot = 3;
+                TypeShoot = 4;
             T_TypeW.text = TypeShoot.ToString();
         }
 
