@@ -9,6 +9,8 @@ public class scr_Gun : MonoBehaviour {
     public LayerMask MaskShoot;
     public GameObject HitEffect;
 
+    public GameObject Bullet;
+
     float CD = 0f;
     float CD2 = 0f;
 
@@ -57,6 +59,9 @@ public class scr_Gun : MonoBehaviour {
         {
             if (CD<=0f)
             {
+                GameObject bullet =  Instantiate(Bullet, Cannon.transform.position, Cannon.transform.rotation);
+                bullet.GetComponent<scr_bullet>().TypeShoot = TypeShoot;
+                /*
                 Ray shoot = new Ray(Cannon.transform.position, Cannon.transform.forward);
                 RaycastHit hit;
                 Physics.Raycast(shoot, out hit, MaskShoot);
@@ -69,14 +74,16 @@ public class scr_Gun : MonoBehaviour {
                     GameObject hitef = Instantiate(HitEffect, hit.point, Quaternion.identity);
                     Destroy(hitef, 0.5f);
                 }
+                */
                 CD = 0.5f;
             }
         }
         if (Input.GetButtonDown("Fire2") || Input.GetAxis("Fire2") >0.5f)
         {
-            int num = 0;
             if (CD2 <= 0f)
             {
+                GameObject bullet = Instantiate(Bullet, Cannon.transform.position, Cannon.transform.rotation);
+                /*
                 Ray shoot = new Ray(Cannon.transform.position, Cannon.transform.forward);
                 RaycastHit hit;
                 Physics.Raycast(shoot, out hit, MaskShoot);
@@ -89,7 +96,8 @@ public class scr_Gun : MonoBehaviour {
                     GameObject hitef = Instantiate(HitEffect, hit.point, Quaternion.identity);
                     Destroy(hitef, 0.5f);
                 }
-                CD2 = 0.2f;
+                */
+                CD2 = 0.5f;
             }
         }
 

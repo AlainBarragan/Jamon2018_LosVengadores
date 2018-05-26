@@ -1295,6 +1295,17 @@ MonoBehaviour:
   magnetico: []
   phMat: {fileID: 13400000, guid: ccf055fabb5d86345b549234fdb8d8ff, type: 2}
   normal: {fileID: 13400000, guid: 48c094062c9f5334a89a6a53b009a054, type: 2}
+--- !u!114 &52246446
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 52246442}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e7c3631daf0ac448aa44417e6e26433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!65 &52246447
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -19973,7 +19984,7 @@ Prefab:
     m_Modifications:
     - target: {fileID: 4749340374422636, guid: ccc4c9ca3252e2a4b87490f78dbcef92, type: 2}
       propertyPath: m_LocalPosition.x
-      value: 39.3
+      value: -11.7
       objectReference: {fileID: 0}
     - target: {fileID: 4749340374422636, guid: ccc4c9ca3252e2a4b87490f78dbcef92, type: 2}
       propertyPath: m_LocalPosition.y
@@ -19981,7 +19992,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4749340374422636, guid: ccc4c9ca3252e2a4b87490f78dbcef92, type: 2}
       propertyPath: m_LocalPosition.z
-      value: -64.5
+      value: -16.5
       objectReference: {fileID: 0}
     - target: {fileID: 4749340374422636, guid: ccc4c9ca3252e2a4b87490f78dbcef92, type: 2}
       propertyPath: m_LocalRotation.x
@@ -20043,6 +20054,12 @@ Prefab:
       propertyPath: MaskShoot.m_Bits
       value: 257
       objectReference: {fileID: 0}
+    - target: {fileID: 114083456634762256, guid: ccc4c9ca3252e2a4b87490f78dbcef92,
+        type: 2}
+      propertyPath: Bullet
+      value: 
+      objectReference: {fileID: 1815152209788112, guid: 296b6bcc4187b284d9bf88b8005f11e8,
+        type: 2}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: ccc4c9ca3252e2a4b87490f78dbcef92, type: 2}
   m_IsPrefabParent: 0
