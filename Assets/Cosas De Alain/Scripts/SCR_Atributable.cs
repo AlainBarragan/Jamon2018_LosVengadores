@@ -14,14 +14,12 @@ public class SCR_Atributable : MonoBehaviour
     }
 
     public ATRIBUTO atributo;
-    public GameObject[] magnetico; 
-
-    GameObject[] gos;
+    public GameObject[] magnetico;
+    public PhysicMaterial phMat;
 
     private void Start()
     {
         atributo = ATRIBUTO.Neutral;
-
     }
 
     private void Update()
@@ -53,28 +51,29 @@ public class SCR_Atributable : MonoBehaviour
     void Flotar()
     {
         this.GetComponent<Rigidbody>().useGravity = false;
-        this.transform.Translate(Vector3.up);
+        this.transform.Translate(Vector3.up * Time.deltaTime);
     }
 
     void Atraer()
     {
-
+        if (magnetico.Length > 0)
+        {
+            for (int i = 0; i < magnetico.Length; i++)
+            {
+                magnetico[i].GetComponent<Rigidbody>().useGravity = false;
+                magnetico[i].transform.position = Vector3.MoveTowards(magnetico[i].transform.position, this.transform.position, 5 * Time.deltaTime);
+            }
+        }
     }
 
     void Girar()
     {
         this.transform.Rotate(0, 0, 15);
     }
-
-    private void OnCollisionEnter(Collision c)
+    
+    void Rebotable()
     {
-        if (atributo == ATRIBUTO.Rebotable)
-        {
-            Vector3 dir = c.contacts[0].point - transform.position;
-            dir = -dir.normalized;
-            GetComponent<Rigidbody>().AddForce(dir * 10);
-            Debug.Log("Boing");
-        }
+        this.GetComponent<BoxCollider>().material = phMat;
     }
 
     public void CambiarAtributo(int atr)
@@ -92,6 +91,7 @@ public class SCR_Atributable : MonoBehaviour
                 break;
             case 3:
                 atributo = ATRIBUTO.Rebotable;
+                Rebotable();
                 break;
             case 4:
                 atributo = ATRIBUTO.Gravedad;
@@ -106,5 +106,31 @@ public class SCR_Atributable : MonoBehaviour
         {
             this.GetComponent<Rigidbody>().useGravity = true;
         }
+
+        if (atributo != ATRIBUTO.Iman)
+        {
+            if (magnetico.Length > 0)
+            {
+                for (int i = 0; i < magnetico.Length; i++)
+                {
+                    magnetico[i].GetComponent<Rigidbody>().useGravity = true;
+                }
+            }
+        }
+        if (atributo != ATRIBUTO.Rebotable)
+        {
+            this.GetComponent<BoxCollider>().material = null;
+        }
+    }
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
+        if (atributo == ATRIBUTO.Rebotable && rb != null)
+        {
+            if (rb.velocity.magnitude < 10)
+                rb.velocity *= 1.5f;
+        }
+
     }
 }
