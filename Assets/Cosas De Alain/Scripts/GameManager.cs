@@ -15,6 +15,11 @@ public class GameManager : MonoBehaviour
         GM = this;
     }
 
+    public GameObject getObjeto()
+    {
+        return ObjetoAtributo;
+    }
+
     public void SetObjeto(GameObject go)
     {
         if (ObjetoAtributo != null)

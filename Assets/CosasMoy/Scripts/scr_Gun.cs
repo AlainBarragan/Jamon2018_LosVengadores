@@ -74,6 +74,7 @@ public class scr_Gun : MonoBehaviour {
         }
         if (Input.GetButtonDown("Fire2") || Input.GetAxis("Fire2") >0.5f)
         {
+            int num = 0;
             if (CD2 <= 0f)
             {
                 Ray shoot = new Ray(Cannon.transform.position, Cannon.transform.forward);
@@ -83,7 +84,7 @@ public class scr_Gun : MonoBehaviour {
                 {
                     if (hit.transform.gameObject.CompareTag("Atributable"))
                     {
-                        hit.transform.gameObject.SendMessage("CambiarAtributo", 0);
+                        hit.transform.gameObject.SendMessage("CambiarAtributo", num);
                     }
                     GameObject hitef = Instantiate(HitEffect, hit.point, Quaternion.identity);
                     Destroy(hitef, 0.5f);
