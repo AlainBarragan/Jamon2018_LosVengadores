@@ -19,7 +19,7 @@ public class scr_Player : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		if (Input.GetButtonDown("Restart") &&LastCheckPoint!=null )
+		if (Input.GetButtonDown("Restart") && LastCheckPoint!=null )
         {
             foreach(SCR_Atributable obj in FindObjectsOfType<SCR_Atributable>())
             {

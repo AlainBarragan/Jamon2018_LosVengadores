@@ -7,9 +7,6 @@ public class scr_Gun : MonoBehaviour {
 
     public GameObject Cannon;
     public LayerMask MaskShoot;
-    public GameObject HitEffect;
-
-    public GameObject Bullet;
 
     float CD = 0f;
     float CD2 = 0f;
@@ -59,7 +56,7 @@ public class scr_Gun : MonoBehaviour {
         {
             if (CD<=0f)
             {
-                GameObject bullet =  Instantiate(Bullet, Cannon.transform.position, Cannon.transform.rotation);
+                GameObject bullet =  Instantiate(GameManager.Bullet, Cannon.transform.position, Cannon.transform.rotation);
                 bullet.GetComponent<scr_bullet>().TypeShoot = TypeShoot;
                 /*
                 Ray shoot = new Ray(Cannon.transform.position, Cannon.transform.forward);
@@ -82,7 +79,7 @@ public class scr_Gun : MonoBehaviour {
         {
             if (CD2 <= 0f)
             {
-                GameObject bullet = Instantiate(Bullet, Cannon.transform.position, Cannon.transform.rotation);
+                GameObject bullet = Instantiate(GameManager.Bullet, Cannon.transform.position, Cannon.transform.rotation);
                 /*
                 Ray shoot = new Ray(Cannon.transform.position, Cannon.transform.forward);
                 RaycastHit hit;

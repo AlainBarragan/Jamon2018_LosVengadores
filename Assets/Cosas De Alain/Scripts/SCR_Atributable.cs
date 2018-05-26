@@ -15,7 +15,7 @@ public class SCR_Atributable : MonoBehaviour
 
     public ATRIBUTO atributo;
     public GameObject[] magnetico;
-    public PhysicMaterial phMat, normal;
+    PhysicMaterial phMat, normal;
     Rigidbody rb;
 
     bool startGravity;
@@ -27,6 +27,8 @@ public class SCR_Atributable : MonoBehaviour
 
     private void Start()
     {
+        phMat = GameManager.phMat;
+        normal = GameManager.normal;
         rb = this.GetComponent<Rigidbody>();
         startGravity = rb.useGravity;
         atributo = ATRIBUTO.Neutral;
@@ -173,11 +175,15 @@ public class SCR_Atributable : MonoBehaviour
 
     private void OnCollisionEnter(Collision collision)
     {
-        Rigidbody rb = collision.gameObject.GetComponent<Rigidbody>();
-        if (atributo == ATRIBUTO.Rebotable && rb != null)
+        if (rb.velocity.magnitude>2)
         {
-            if (rb.velocity.magnitude < 10)
-                rb.velocity *= 1.5f;
+            Destroy(Instantiate(GameManager.Fx_Dost, collision.contacts[0].point, Quaternion.identity),2f);
+        }
+        Rigidbody orb = collision.gameObject.GetComponent<Rigidbody>();
+        if (atributo == ATRIBUTO.Rebotable && orb != null)
+        {
+            if (orb.velocity.magnitude < 10)
+                orb.velocity *= 1.5f;
 
         }
     }

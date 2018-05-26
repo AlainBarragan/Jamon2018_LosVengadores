@@ -23,12 +23,14 @@ public class scr_bullet : MonoBehaviour {
             other.gameObject.SendMessage("CambiarAtributo", TypeShoot);
         }
         //transform.GetChild(0).parent = null;
+        Destroy(Instantiate(GameManager.Fx_Spark, transform.position, Quaternion.identity),2f);
         Destroy(gameObject);
     }
 
     private void OnCollisionEnter(Collision collision)
     {
         //transform.GetChild(0).parent = null;
+        Destroy(Instantiate(GameManager.Fx_Spark, transform.position, Quaternion.identity), 2f);
         Destroy(gameObject);
     }
 }

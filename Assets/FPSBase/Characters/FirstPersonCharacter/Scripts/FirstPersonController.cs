@@ -42,6 +42,9 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        public Animator Ag1;
+        public Animator Ag2;
+
         // Use this for initialization
         private void Start()
         {
@@ -212,6 +215,16 @@ namespace UnityStandardAssets.Characters.FirstPerson
             // Read input
             float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
+
+            if (horizontal == 0 && vertical == 0)
+            {
+                Ag1.SetBool("Move", false);
+                Ag2.SetBool("Move", false);
+            } else
+            {
+                Ag1.SetBool("Move", true);
+                Ag2.SetBool("Move", true);
+            }
 
             bool waswalking = m_IsWalking;
 
