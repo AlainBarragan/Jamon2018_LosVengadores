@@ -7,6 +7,8 @@ TagManager:
   - Atributable
   - KillZone
   - ChekPoint
+  - WinGame
+  - OtherEnd
   layers:
   - Default
   - TransparentFX

@@ -9,6 +9,7 @@ public class scr_UI : MonoBehaviour {
 
     public Text TypeW;
     public GameObject GameOver;
+    public scr_History Hystory;
 
     private void Awake()
     {

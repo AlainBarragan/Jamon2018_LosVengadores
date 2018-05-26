@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class scr_History : MonoBehaviour {
 
@@ -17,11 +18,19 @@ public class scr_History : MonoBehaviour {
 
     bool Desactivado = false;
 
+    public GameObject Player;
+    public GameObject BaseCamera;
+
+    bool IsEnd;
+
     // Use this for initialization
     void Start () {
+        IsEnd = false;
         Sindex = "";
         Idx = 0;
         SetHistory(0);
+        Player.SetActive(false);
+        BaseCamera.SetActive(true);
     }
 	
 	// Update is called once per frame
@@ -54,6 +63,12 @@ public class scr_History : MonoBehaviour {
         if (Desactivado)
             return;
 
+        if (Show.text!= Dialogos[Idx])
+        {
+            Show.text = Dialogos[Idx];
+            return;
+        }
+
         Idx++;
         if (Idx<Dialogos.Length)
         {
@@ -63,7 +78,15 @@ public class scr_History : MonoBehaviour {
         {
             Desactivado = true;
             StopAllCoroutines();
-            GetComponent<Animator>().SetTrigger("FadeOut");
+            if (!IsEnd)
+            {
+                Player.SetActive(true);
+                BaseCamera.SetActive(false);
+                GetComponent<Animator>().SetTrigger("FadeOut");
+            } else
+            {
+                SceneManager.LoadScene("Menu");
+            }
         }
     }
 
@@ -87,6 +110,7 @@ public class scr_History : MonoBehaviour {
                     Dialogos[2] = scr_Lang.GetText("txt_history_08");
                     Dialogos[3] = scr_Lang.GetText("txt_history_09");
                     Dialogos[4] = scr_Lang.GetText("txt_history_10");
+                    IsEnd = true;
                 }
                 break;
             case 2:
@@ -96,6 +120,7 @@ public class scr_History : MonoBehaviour {
                     Dialogos[2] = scr_Lang.GetText("txt_history_13");
                     Dialogos[3] = scr_Lang.GetText("txt_history_14");
                     Dialogos[4] = scr_Lang.GetText("txt_history_15");
+                    IsEnd = true;
                 }
                 break;
         }
@@ -107,5 +132,11 @@ public class scr_History : MonoBehaviour {
         Title.text = "";
         StopAllCoroutines();
         StartCoroutine(TextLoop());
+        if (IsEnd)
+        {
+            Player.SetActive(false);
+            BaseCamera.SetActive(true);
+            GetComponent<Animator>().SetTrigger("FadeIn");
+        }
     }
 }

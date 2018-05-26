@@ -56,6 +56,14 @@ public class scr_Player : MonoBehaviour {
             if (other.gameObject.GetComponent<SCR_Atributable>().atributo == SCR_Atributable.ATRIBUTO.Rebotable && other.transform.position.y<transform.position.y)
                 gameObject.SendMessage("Jump", 18f);
         }
+        if (other.CompareTag("WinGame"))
+        {
+            scr_UI.UI.Hystory.SetHistory(1);
+        }
+        if (other.CompareTag("OtherEnd"))
+        {
+            scr_UI.UI.Hystory.SetHistory(2);
+        }
     }
 
 }
