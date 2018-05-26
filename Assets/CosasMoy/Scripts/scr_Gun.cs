@@ -9,8 +9,6 @@ public class scr_Gun : MonoBehaviour {
     public LayerMask MaskShoot;
     public GameObject HitEffect;
 
-    public Text T_TypeW;
-
     float CD = 0f;
     float CD2 = 0f;
 
@@ -48,7 +46,7 @@ public class scr_Gun : MonoBehaviour {
         if (Input.GetAxis("DpadY") > 0.5)
             TypeShoot = 4;
 
-        T_TypeW.text = TypeShoot.ToString();
+        scr_UI.UI.TypeW.text = TypeShoot.ToString();
 
         if (CD > 0f)
             CD -= Time.deltaTime;
@@ -94,6 +92,5 @@ public class scr_Gun : MonoBehaviour {
             }
         }
 
-        Debug.DrawRay(Cannon.transform.position, Cannon.transform.forward, Color.yellow);
     }
 }

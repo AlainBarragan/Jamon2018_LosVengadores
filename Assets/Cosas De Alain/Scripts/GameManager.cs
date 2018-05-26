@@ -4,7 +4,14 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour 
 {
+    public static GameManager GM;
+
     GameObject ObjetoAtributo;
+
+    private void Awake()
+    {
+        GM = this;
+    }
 
     public void SetObjeto(GameObject go)
     {
