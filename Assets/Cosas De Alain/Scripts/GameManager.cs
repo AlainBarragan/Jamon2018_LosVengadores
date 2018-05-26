@@ -8,6 +8,8 @@ public class GameManager : MonoBehaviour
 
     GameObject ObjetoAtributo;
 
+    public static int Leng = 0;
+
     private void Awake()
     {
         GM = this;
