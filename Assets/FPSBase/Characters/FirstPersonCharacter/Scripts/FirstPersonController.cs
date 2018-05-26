@@ -115,10 +115,7 @@ namespace UnityStandardAssets.Characters.FirstPerson
 
                 if (m_Jump)
                 {
-                    m_MoveDir.y = m_JumpSpeed;
-                    PlayJumpSound();
-                    m_Jump = false;
-                    m_Jumping = true;
+                    Jump(m_JumpSpeed);
                 }
             }
             else
@@ -131,6 +128,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
             UpdateCameraPosition(speed);
 
             m_MouseLook.UpdateCursorLock();
+        }
+
+        public void Jump(float force)
+        {
+            Debug.Log("Slato");
+            m_MoveDir.y = force;
+            PlayJumpSound();
+            m_Jump = false;
+            m_Jumping = true;
         }
 
 

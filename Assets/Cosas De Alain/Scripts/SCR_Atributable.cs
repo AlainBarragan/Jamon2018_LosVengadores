@@ -19,6 +19,11 @@ public class SCR_Atributable : MonoBehaviour
     Rigidbody rb;
 
     bool startGravity;
+    Vector3 StartPosition;
+    Vector3 StartScale;
+    Vector3 StartVelocity;
+    Quaternion StartRotation;
+    ATRIBUTO StartAtributo;
 
     private void Start()
     {
@@ -26,6 +31,10 @@ public class SCR_Atributable : MonoBehaviour
         startGravity = rb.useGravity;
         atributo = ATRIBUTO.Neutral;
         this.GetComponent<BoxCollider>().material = normal;
+        StartPosition = transform.position;
+        StartScale = transform.localScale;
+        StartRotation = transform.rotation;
+        StartVelocity = rb.velocity;
     }
 
     private void Update()
@@ -52,6 +61,17 @@ public class SCR_Atributable : MonoBehaviour
             default:
                 break;
         }
+    }
+
+    public void ResetObject()
+    {
+        atributo = StartAtributo;
+        transform.position = StartPosition;
+        transform.rotation = StartRotation;
+        transform.localScale = StartScale;
+        rb.useGravity = startGravity;
+        rb.velocity = StartVelocity;
+        this.GetComponent<BoxCollider>().material = normal;
     }
 
     void Flotar()
@@ -158,7 +178,7 @@ public class SCR_Atributable : MonoBehaviour
         {
             if (rb.velocity.magnitude < 10)
                 rb.velocity *= 1.5f;
-        }
 
+        }
     }
 }

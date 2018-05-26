@@ -21,6 +21,10 @@ public class scr_Player : MonoBehaviour {
 	void Update () {
 		if (Input.GetButtonDown("Restart") &&LastCheckPoint!=null )
         {
+            foreach(SCR_Atributable obj in FindObjectsOfType<SCR_Atributable>())
+            {
+                obj.ResetObject();
+            }
             transform.position = LastCheckPoint.transform.position;
             transform.rotation = Quaternion.identity;
             if (Death)
@@ -46,6 +50,11 @@ public class scr_Player : MonoBehaviour {
         if (other.CompareTag("ChekPoint"))
         {
             LastCheckPoint = other.gameObject;
+        }
+        if (other.gameObject.CompareTag("Atributable"))
+        {
+            if (other.gameObject.GetComponent<SCR_Atributable>().atributo == SCR_Atributable.ATRIBUTO.Rebotable && other.transform.position.y<transform.position.y)
+                gameObject.SendMessage("Jump", 18f);
         }
     }
 
