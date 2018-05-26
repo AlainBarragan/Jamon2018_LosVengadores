@@ -11,6 +11,7 @@ public class GameManager : MonoBehaviour
     private void Awake()
     {
         GM = this;
+        scr_Lang.setLanguage();
     }
 
     public GameObject getObjeto()
