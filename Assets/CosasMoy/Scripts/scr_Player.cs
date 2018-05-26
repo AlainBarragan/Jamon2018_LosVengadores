@@ -14,6 +14,7 @@ public class scr_Player : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         Death = false;
+        
     }
 	
 	// Update is called once per frame
@@ -45,7 +46,7 @@ public class scr_Player : MonoBehaviour {
         if (other.CompareTag("ChekPoint"))
         {
             LastCheckPoint = other.gameObject;
-            Debug.Log("CheckPoint!");
         }
     }
+
 }

@@ -2103,6 +2103,7 @@ MonoBehaviour:
   atributo: 0
   magnetico: []
   phMat: {fileID: 13400000, guid: ccf055fabb5d86345b549234fdb8d8ff, type: 2}
+  normal: {fileID: 13400000, guid: 48c094062c9f5334a89a6a53b009a054, type: 2}
 --- !u!65 &367024652
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -2126,7 +2127,7 @@ Rigidbody:
   m_Drag: 0
   m_AngularDrag: 0.05
   m_UseGravity: 0
-  m_IsKinematic: 1
+  m_IsKinematic: 0
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -2901,9 +2902,10 @@ GameObject:
   - component: {fileID: 516977604}
   - component: {fileID: 516977599}
   - component: {fileID: 516977598}
+  - component: {fileID: 516977605}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3171,6 +3173,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   LastCheckPoint: {fileID: 0}
   Death: 0
+--- !u!136 &516977605
+CapsuleCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 516977597}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  m_Radius: 0.5
+  m_Height: 1.8
+  m_Direction: 1
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &534259365
 Prefab:
   m_ObjectHideFlags: 0
@@ -3998,6 +4013,7 @@ MonoBehaviour:
   magnetico:
   - {fileID: 1800962483}
   phMat: {fileID: 13400000, guid: ccf055fabb5d86345b549234fdb8d8ff, type: 2}
+  normal: {fileID: 13400000, guid: 48c094062c9f5334a89a6a53b009a054, type: 2}
 --- !u!65 &661350691
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -7092,6 +7108,7 @@ MonoBehaviour:
   atributo: 0
   magnetico: []
   phMat: {fileID: 13400000, guid: ccf055fabb5d86345b549234fdb8d8ff, type: 2}
+  normal: {fileID: 13400000, guid: 48c094062c9f5334a89a6a53b009a054, type: 2}
 --- !u!65 &1190847415
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -9660,6 +9677,7 @@ MonoBehaviour:
   magnetico:
   - {fileID: 1800962483}
   phMat: {fileID: 13400000, guid: ccf055fabb5d86345b549234fdb8d8ff, type: 2}
+  normal: {fileID: 13400000, guid: 48c094062c9f5334a89a6a53b009a054, type: 2}
 --- !u!65 &1671985699
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10640,13 +10658,13 @@ Rigidbody:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1800962483}
   serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
+  m_Mass: 2
+  m_Drag: 1
   m_AngularDrag: 0.05
   m_UseGravity: 0
   m_IsKinematic: 1
   m_Interpolate: 0
-  m_Constraints: 0
+  m_Constraints: 116
   m_CollisionDetection: 0
 --- !u!114 &1800962485
 MonoBehaviour:
@@ -10662,6 +10680,7 @@ MonoBehaviour:
   atributo: 0
   magnetico: []
   phMat: {fileID: 13400000, guid: ccf055fabb5d86345b549234fdb8d8ff, type: 2}
+  normal: {fileID: 13400000, guid: 48c094062c9f5334a89a6a53b009a054, type: 2}
 --- !u!65 &1800962486
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10672,8 +10691,31 @@ BoxCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 3, y: 3.0000007, z: 0.15000002}
+  m_Size: {x: 3, y: 3.0000007, z: 0.15}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &1800962487
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1800962483}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 3, y: 3.0000007, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &1800962488
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1800962483}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8e7c3631daf0ac448aa44417e6e26433, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!4 &1800962489 stripped
 Transform:
   m_PrefabParentObject: {fileID: 400000, guid: 7ffe7d6515d2c894c8a30a4b832fb194, type: 3}
