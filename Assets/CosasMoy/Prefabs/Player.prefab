@@ -129,7 +129,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1595947438175064}
-  m_LocalRotation: {x: 0.70710576, y: -0, z: -0, w: 0.70710784}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 0.25, y: 0.5, z: 0.25}
   m_Children: []
@@ -329,7 +329,7 @@ MonoBehaviour:
   Cannon: {fileID: 1595947438175064}
   MaskShoot:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 256
   HitEffect: {fileID: 1882283251078926, guid: e6d81742cef517f4d9cc2d405198b5b3, type: 2}
 --- !u!114 &114247292559401676
 MonoBehaviour:
