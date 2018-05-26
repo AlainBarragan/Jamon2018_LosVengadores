@@ -6,6 +6,7 @@ using UnityEngine.UI;
 public class scr_Menu : MonoBehaviour {
 
     public Dropdown Lang;
+    public Dropdown Reso;
 
     private void Awake()
     {

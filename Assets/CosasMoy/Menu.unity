@@ -350,7 +350,6 @@ GameObject:
   - component: {fileID: 212688035}
   - component: {fileID: 212688037}
   - component: {fileID: 212688036}
-  - component: {fileID: 212688038}
   m_Layer: 5
   m_Name: Item Label
   m_TagString: Untagged
@@ -415,18 +414,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 212688034}
---- !u!114 &212688038
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 212688034}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef07bef8f93781a4699b616542607d6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: None
 --- !u!1 &236428772
 GameObject:
   m_ObjectHideFlags: 0
@@ -505,7 +492,6 @@ GameObject:
   - component: {fileID: 277061841}
   - component: {fileID: 277061843}
   - component: {fileID: 277061842}
-  - component: {fileID: 277061844}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -570,18 +556,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 277061840}
---- !u!114 &277061844
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 277061840}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef07bef8f93781a4699b616542607d6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: None
 --- !u!1 &321452437
 GameObject:
   m_ObjectHideFlags: 0
@@ -2469,6 +2443,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4fa47400c74c7344c8f759ec6b12095e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  Lang: {fileID: 1357633944}
+  Reso: {fileID: 1179989265}
 --- !u!1 &1128032107
 GameObject:
   m_ObjectHideFlags: 0
@@ -3076,7 +3052,18 @@ MonoBehaviour:
       m_Image: {fileID: 0}
   m_OnValueChanged:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1015305777}
+        m_MethodName: ChangeLeng
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
     m_TypeName: UnityEngine.UI.Dropdown+DropdownEvent, UnityEngine.UI, Version=1.0.0.0,
       Culture=neutral, PublicKeyToken=null
 --- !u!114 &1357633945
@@ -3122,7 +3109,6 @@ GameObject:
   - component: {fileID: 1412070147}
   - component: {fileID: 1412070149}
   - component: {fileID: 1412070148}
-  - component: {fileID: 1412070150}
   m_Layer: 5
   m_Name: Item Label
   m_TagString: Untagged
@@ -3187,18 +3173,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1412070146}
---- !u!114 &1412070150
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1412070146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef07bef8f93781a4699b616542607d6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: None
 --- !u!1 &1435215118
 GameObject:
   m_ObjectHideFlags: 0
@@ -4256,7 +4230,6 @@ GameObject:
   - component: {fileID: 1896779168}
   - component: {fileID: 1896779170}
   - component: {fileID: 1896779169}
-  - component: {fileID: 1896779171}
   m_Layer: 5
   m_Name: Label
   m_TagString: Untagged
@@ -4321,18 +4294,6 @@ CanvasRenderer:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1896779167}
---- !u!114 &1896779171
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1896779167}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ef07bef8f93781a4699b616542607d6c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  ID: None
 --- !u!1 &1941395719
 GameObject:
   m_ObjectHideFlags: 0
