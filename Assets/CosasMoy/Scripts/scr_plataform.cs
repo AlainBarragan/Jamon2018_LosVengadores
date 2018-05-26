@@ -20,7 +20,6 @@ public class scr_plataform : MonoBehaviour {
     {
         if (target != null)
         {
-            Debug.Log("MovePlayer");
             target.transform.Translate(mov,Space.World);
         }
     }
