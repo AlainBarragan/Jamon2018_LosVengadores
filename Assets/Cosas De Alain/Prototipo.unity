@@ -499,6 +499,7 @@ MonoBehaviour:
   magnetico:
   - {fileID: 2039802315}
   phMat: {fileID: 13400000, guid: ccf055fabb5d86345b549234fdb8d8ff, type: 2}
+  normal: {fileID: 13400000, guid: 48c094062c9f5334a89a6a53b009a054, type: 2}
 --- !u!54 &985836235
 Rigidbody:
   m_ObjectHideFlags: 0

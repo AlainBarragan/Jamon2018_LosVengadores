@@ -15,11 +15,12 @@ public class SCR_Atributable : MonoBehaviour
 
     public ATRIBUTO atributo;
     public GameObject[] magnetico;
-    public PhysicMaterial phMat;
+    public PhysicMaterial phMat, normal;
 
     private void Start()
     {
         atributo = ATRIBUTO.Neutral;
+        this.GetComponent<BoxCollider>().material = normal;
     }
 
     private void Update()
@@ -123,7 +124,7 @@ public class SCR_Atributable : MonoBehaviour
         }
         if (atributo != ATRIBUTO.Rebotable)
         {
-            this.GetComponent<BoxCollider>().material = null;
+            this.GetComponent<BoxCollider>().material = normal;
         }
     }
 
