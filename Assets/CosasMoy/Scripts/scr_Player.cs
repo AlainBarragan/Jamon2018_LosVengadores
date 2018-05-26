@@ -41,11 +41,7 @@ public class scr_Player : MonoBehaviour {
     {
         if (other.CompareTag("KillZone") && !Death)
         {
-            GetComponent<scr_Gun>().enabled = false;
-            GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
-            Death = true;
-            Deaths++;
-            scr_UI.UI.GameOver.SetActive(true);
+            Die();
         }
         if (other.CompareTag("ChekPoint"))
         {
@@ -64,6 +60,15 @@ public class scr_Player : MonoBehaviour {
         {
             scr_UI.UI.Hystory.SetHistory(2);
         }
+    }
+
+    public void Die()
+    {
+        GetComponent<scr_Gun>().enabled = false;
+        GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+        Death = true;
+        Deaths++;
+        scr_UI.UI.GameOver.SetActive(true);
     }
 
 }
