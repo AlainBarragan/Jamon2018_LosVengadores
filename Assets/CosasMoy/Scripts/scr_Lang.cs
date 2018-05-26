@@ -11,7 +11,7 @@ public class scr_Lang {
     {
         language = "English";
 
-        if (GameManager.Leng== 1)
+        if (scr_Pstatics.Op_Lang == 1)
         {
             language = "Spanish";
         }

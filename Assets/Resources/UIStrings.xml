@@ -30,6 +30,8 @@
     <string name="txt_menu_info_05">Language</string>
     <string name="txt_menu_info_06">Resolution</string>
     <string name="txt_menu_info_07">Back</string>
+    <string name="txt_menu_info_08">Full Screen</string>
+    <string name="txt_menu_info_09">Loading...</string>
     
   </English>
   
@@ -63,6 +65,8 @@
     <string name="txt_menu_info_05">Idioma</string>
     <string name="txt_menu_info_06">Resolucion</string>
     <string name="txt_menu_info_07">Atras</string>
+    <string name="txt_menu_info_08">Pantalla Completa</string>
+    <string name="txt_menu_info_09">Cargando...</string>
 
   </Spanish>
 </languages>
