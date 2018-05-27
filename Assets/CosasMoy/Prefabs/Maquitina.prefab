@@ -22,6 +22,8 @@ GameObject:
   - component: {fileID: 33252725610475812}
   - component: {fileID: 23948330518094120}
   - component: {fileID: 135739027808984524}
+  - component: {fileID: 114530142104690960}
+  - component: {fileID: 65409122071148452}
   m_Layer: 12
   m_Name: Maquitina
   m_TagString: Untagged
@@ -35,13 +37,13 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1755031302513142}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: -0, w: 0.7071068}
-  m_LocalPosition: {x: -0.05049079, y: 0, z: 0.17631906}
+  m_LocalRotation: {x: -0.5000007, y: -0.49999928, z: -0.49999928, w: 0.5000007}
+  m_LocalPosition: {x: -0.007, y: 0.10000038, z: 46.28754}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: -90.00001, y: 0, z: -90.00001}
 --- !u!23 &23948330518094120
 MeshRenderer:
   m_ObjectHideFlags: 1
@@ -83,6 +85,29 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1755031302513142}
   m_Mesh: {fileID: 4300000, guid: 7e04bb6ee390c4547bcb21ed9c772897, type: 3}
+--- !u!65 &65409122071148452
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1755031302513142}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1.0025802, y: 0.77443564, z: 1.9423058}
+  m_Center: {x: 0.14664225, y: 0, z: 0.9711529}
+--- !u!114 &114530142104690960
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1755031302513142}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 39806f4aea91f784284b03f2897d1728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!135 &135739027808984524
 SphereCollider:
   m_ObjectHideFlags: 1

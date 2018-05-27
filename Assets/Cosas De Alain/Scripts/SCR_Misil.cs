@@ -14,7 +14,7 @@ public class SCR_Misil : MonoBehaviour
     private void Update()
     {
         this.transform.LookAt(player);
-        this.transform.position = Vector3.MoveTowards(this.transform.position, player.position, 10 * Time.deltaTime);
+        this.transform.position = Vector3.MoveTowards(this.transform.position, player.position, 8f * Time.deltaTime);
     }
 
     private void OnCollisionEnter(Collision c)
