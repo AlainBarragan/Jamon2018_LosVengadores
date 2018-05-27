@@ -12,6 +12,7 @@ public class scr_Player : MonoBehaviour {
     SCR_Maquinita maquinita;
     public bool Death;
     public bool jugando;
+    bool hayMaquinita;
 
     public static int Deaths = 0;
 
@@ -25,8 +26,11 @@ public class scr_Player : MonoBehaviour {
     // Use this for initialization
     void Start ()
     {
+        hayMaquinita = true;
         cam = Camera.main;
         maquinita = FindObjectOfType<SCR_Maquinita>();
+        if (maquinita == null)
+            hayMaquinita = false;
         Death = false;
         achivements = FindObjectOfType<SCR_Achivements>();
     }
@@ -51,7 +55,7 @@ public class scr_Player : MonoBehaviour {
             }
             Restart.Play();
         }
-        if (Input.GetButtonDown("PlayMaquinita") && maquinita.GetEnRango() && !jugando)
+        if (Input.GetButtonDown("PlayMaquinita") && maquinita.GetEnRango() && !jugando && hayMaquinita)
         {
             jugando = true;
             pong.SetActive(true);
