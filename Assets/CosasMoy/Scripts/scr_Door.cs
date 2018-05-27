@@ -6,6 +6,8 @@ public class scr_Door : MonoBehaviour {
 
     Animator Anim;
 
+    public bool Closed = false;
+
 	// Use this for initialization
 	void Start () {
         Anim = GetComponent<Animator>();
@@ -14,7 +16,7 @@ public class scr_Door : MonoBehaviour {
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("Player"))
+        if (other.CompareTag("Player") && !Closed)
         {
             Anim.SetBool("Open", true);
         }
