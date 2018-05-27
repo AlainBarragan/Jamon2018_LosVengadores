@@ -34,8 +34,6 @@ public class SCR_Atributable : MonoBehaviour
         normal = GameManager.normal;
         rb = this.GetComponent<Rigidbody>();
         startGravity = rb.useGravity;
-        atributo = ATRIBUTO.Neutral;
-        this.GetComponent<BoxCollider>().material = normal;
         StartPosition = transform.position;
         StartScale = transform.localScale;
         StartRotation = transform.rotation;
@@ -77,6 +75,7 @@ public class SCR_Atributable : MonoBehaviour
         transform.localScale = StartScale;
         rb.useGravity = startGravity;
         rb.velocity = StartVelocity;
+        rb.angularVelocity = Vector3.zero;
         this.GetComponent<BoxCollider>().material = normal;
         GetComponentInChildren<MeshRenderer>().material = StartMaterial;
     }
@@ -105,7 +104,7 @@ public class SCR_Atributable : MonoBehaviour
 
     void Girar()
     {
-        rb.AddForce(Vector3.up*2f, ForceMode.Impulse);
+        //rb.AddForce(Vector3.up*2f, ForceMode.Impulse);
         this.transform.Rotate(0, 0, 30);
     }
     

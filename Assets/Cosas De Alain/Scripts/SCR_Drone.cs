@@ -6,13 +6,11 @@ public class SCR_Drone : MonoBehaviour
 {
     public GameObject Cannon;
     public LayerMask MaskShoot;
-    public GameObject HitEffect;
 
     float dist;
     Transform obj;
     GameManager gm;
     float CD2 = 0f;
-
 
     private void Start()
     {
@@ -53,10 +51,10 @@ public class SCR_Drone : MonoBehaviour
                     {
                         hit.transform.gameObject.SendMessage("CambiarAtributo", num);
                     }
-                    GameObject hitef = Instantiate(HitEffect, hit.point, Quaternion.identity);
+                    GameObject hitef = Instantiate(GameManager.Fx_Spark, hit.point, Quaternion.identity);
                     Destroy(hitef, 0.5f);
                 }
-                CD2 = 2.0f;
+                CD2 = 10.0f;
             }
         }
     }
