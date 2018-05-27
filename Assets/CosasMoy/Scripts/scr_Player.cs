@@ -39,21 +39,7 @@ public class scr_Player : MonoBehaviour {
 	void Update () {
 		if (Input.GetButtonDown("Restart") && LastCheckPoint!=null )
         {
-            foreach(SCR_Atributable obj in FindObjectsOfType<SCR_Atributable>())
-            {
-                obj.ResetObject();
-            }
-            transform.position = LastCheckPoint.transform.position;
-            transform.rotation = Quaternion.identity;
-            if (Death)
-            {
-                GetComponent<scr_Gun>().enabled = true;
-                GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
-                Death = false;
-                scr_UI.UI.GameOver.SetActive(false);
-                AnimGun.SetTrigger("Restart");
-            }
-            Restart.Play();
+            RestartPlayer();
         }
         if (Input.GetButtonDown("PlayMaquinita") && maquinita.GetEnRango() && !jugando && hayMaquinita)
         {
@@ -71,6 +57,25 @@ public class scr_Player : MonoBehaviour {
             cam.gameObject.SetActive(true);
         }
 
+    }
+
+    public void RestartPlayer()
+    {
+        foreach (SCR_Atributable obj in FindObjectsOfType<SCR_Atributable>())
+        {
+            obj.ResetObject();
+        }
+        transform.position = LastCheckPoint.transform.position;
+        transform.rotation = Quaternion.identity;
+        if (Death)
+        {
+            GetComponent<scr_Gun>().enabled = true;
+            GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+            Death = false;
+            scr_UI.UI.GameOver.SetActive(false);
+            AnimGun.SetTrigger("Restart");
+        }
+        Restart.Play();
     }
 
     private void OnTriggerEnter(Collider other)

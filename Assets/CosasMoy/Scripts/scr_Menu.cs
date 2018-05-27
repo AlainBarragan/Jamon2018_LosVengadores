@@ -9,6 +9,7 @@ public class scr_Menu : MonoBehaviour {
     public GameObject Loading;
 
     public Dropdown Resolution;
+    public Dropdown Weapon;
     public Toggle FullScr;
 
     public static SaveGameFree.scr_DataPalyer MyData;
@@ -30,8 +31,10 @@ public class scr_Menu : MonoBehaviour {
     void Start () {
         scr_Pstatics.Op_Resol = MyData.Op_Resol;
         scr_Pstatics.Op_Fullscr = MyData.Op_Fullscr;
+        scr_Pstatics.WpModel = MyData.Op_ModelWp;
         Resolution.value = scr_Pstatics.Op_Resol;
         FullScr.isOn = scr_Pstatics.Op_Fullscr;
+        Weapon.value = scr_Pstatics.WpModel;
         SetResolution();
     }
 
@@ -95,9 +98,9 @@ public class scr_Menu : MonoBehaviour {
         SaveDataPlayer();
     }
 
-    public void SetModelWp(int model)
+    public void SetModelWp()
     {
-        scr_Pstatics.WpModel = model;
+        scr_Pstatics.WpModel = Weapon.value;
         SaveDataPlayer();
     }
 

@@ -16,7 +16,7 @@ public class scr_History : MonoBehaviour {
     public Text Show;
     public Text Title;
 
-    bool Desactivado = false;
+    public bool Desactivado = false;
 
     public GameObject Player;
     public GameObject BaseCamera;

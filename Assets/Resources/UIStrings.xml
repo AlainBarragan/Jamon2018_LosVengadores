@@ -46,6 +46,9 @@
     <string name="txt_menu_info_12">Video</string>
     <string name="txt_menu_info_13">Sound</string>
     <string name="txt_menu_info_14">Choose Weapon</string>
+    <string name="txt_menu_info_15">Pause</string>
+    <string name="txt_menu_info_16">Continue</string>
+    <string name="txt_menu_info_17">Restart</string>
 
     <string name="txt_history_01">Navigator A17's log</string>
     <string name="txt_history_02">State: Critical</string>
@@ -113,6 +116,9 @@
     <string name="txt_menu_info_12">Video</string>
     <string name="txt_menu_info_13">Sonido</string>
     <string name="txt_menu_info_14">Elejir Arma</string>
+    <string name="txt_menu_info_15">Pausa</string>
+    <string name="txt_menu_info_16">Continuar</string>
+    <string name="txt_menu_info_17">Reintentar</string>
 
     <string name="txt_history_01">Reporte del Navegante A17</string>
     <string name="txt_history_02">Estado: Critico</string>

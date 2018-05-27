@@ -6,8 +6,8 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Menu/Menu.1.unity
-    guid: 5851675c878c3af40a2261b0a0e887b4
+    path: Assets/CosasMoy/Menu.unity
+    guid: 199945ff54869f1438e9f51f94d35fe2
   - enabled: 1
     path: Assets/CosasMoy/Game.unity
     guid: 90559256b52e85a48b7d17bcb956479d
