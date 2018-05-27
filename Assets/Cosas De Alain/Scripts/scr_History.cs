@@ -23,6 +23,8 @@ public class scr_History : MonoBehaviour {
 
     bool IsEnd;
 
+    public AudioSource VOX;
+
     // Use this for initialization
     void Start () {
         IsEnd = false;
@@ -122,6 +124,7 @@ public class scr_History : MonoBehaviour {
                     Dialogos[3] = scr_Lang.GetText("txt_history_14");
                     Dialogos[4] = scr_Lang.GetText("txt_history_15");
                     IsEnd = true;
+                    VOX.Play();
                 }
                 break;
         }

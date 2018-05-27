@@ -8,8 +8,11 @@ public class scr_Door : MonoBehaviour {
 
     public bool Closed = false;
 
-	// Use this for initialization
-	void Start () {
+    public AudioSource Open;
+    public AudioSource Close;
+
+    // Use this for initialization
+    void Start () {
         Anim = GetComponent<Animator>();
 
     }
@@ -28,5 +31,15 @@ public class scr_Door : MonoBehaviour {
         {
             Anim.SetBool("Open", false);
         }
+    }
+
+    public void PlayOpen()
+    {
+        Open.Play();
+    }
+
+    public void PlayClose()
+    {
+        Close.Play();
     }
 }

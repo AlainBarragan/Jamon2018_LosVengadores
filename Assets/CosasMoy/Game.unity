@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.0030791387, g: 0.009263674, b: 0.016257748, a: 1}
+  m_IndirectSpecularColor: {r: 0.003140858, g: 0.009242746, b: 0.016216042, a: 1}
 --- !u!157 &3
 LightmapSettings:
   m_ObjectHideFlags: 0
@@ -10313,6 +10313,11 @@ Prefab:
       propertyPath: BaseCamera
       value: 
       objectReference: {fileID: 433376194}
+    - target: {fileID: 114642848136035484, guid: a80c46c4586a85e449417aee364e702b,
+        type: 2}
+      propertyPath: VOX
+      value: 
+      objectReference: {fileID: 1883191477}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: a80c46c4586a85e449417aee364e702b, type: 2}
   m_IsPrefabParent: 0
@@ -17647,6 +17652,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   Closed: 0
+  Open: {fileID: 0}
+  Close: {fileID: 0}
 --- !u!95 &1551122387
 Animator:
   serializedVersion: 3
