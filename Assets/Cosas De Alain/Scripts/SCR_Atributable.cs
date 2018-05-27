@@ -76,7 +76,10 @@ public class SCR_Atributable : MonoBehaviour
         rb.useGravity = startGravity;
         rb.velocity = StartVelocity;
         rb.angularVelocity = Vector3.zero;
-        this.GetComponent<BoxCollider>().material = normal;
+        if (GetComponent<BoxCollider>())
+            this.GetComponent<BoxCollider>().material = normal;
+        if (GetComponent<SphereCollider>())
+            this.GetComponent<SphereCollider>().material = normal;
         GetComponentInChildren<MeshRenderer>().material = StartMaterial;
     }
 
@@ -110,7 +113,10 @@ public class SCR_Atributable : MonoBehaviour
     
     void Rebotable()
     {
-        this.GetComponent<BoxCollider>().material = phMat;
+        if (GetComponent<BoxCollider>())
+            this.GetComponent<BoxCollider>().material = phMat;
+        if (GetComponent<SphereCollider>())
+            this.GetComponent<SphereCollider>().material = phMat;
     }
 
     public void CambiarAtributo(int atr)
@@ -183,7 +189,10 @@ public class SCR_Atributable : MonoBehaviour
         }
         if (atributo != ATRIBUTO.Rebotable)
         {
-            this.GetComponent<BoxCollider>().material = normal;
+            if (GetComponent<BoxCollider>())
+                this.GetComponent<BoxCollider>().material = normal;
+            if (GetComponent<SphereCollider>())
+                this.GetComponent<SphereCollider>().material = normal;
         }
     }
 

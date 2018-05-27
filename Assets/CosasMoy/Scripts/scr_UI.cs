@@ -11,6 +11,7 @@ public class scr_UI : MonoBehaviour {
     public scr_History Hystory;
     public Text Tutorial;
     string tutorial;
+    string CurrentAdvice;
 
     private void Awake()
     {
@@ -19,22 +20,22 @@ public class scr_UI : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-        tutorial = scr_Lang.GetText("txt_game_info_07");
+        tutorial = CurrentAdvice = scr_Lang.GetText("txt_game_info_07");
     }
 
     IEnumerator ShowTutorial()
     {
         yield return new WaitForSeconds(3f);
-        while (Tutorial.text.Length<tutorial.Length)
+        while (Tutorial.text.Length< CurrentAdvice.Length)
         {
             yield return new WaitForSeconds(0.05f);
             Tutorial.text += tutorial[0];
             tutorial = tutorial.Substring(1);
         }
         yield return new WaitForSeconds(4f);
-        tutorial = scr_Lang.GetText("txt_game_info_08");
+        tutorial = CurrentAdvice = scr_Lang.GetText("txt_game_info_08");
         Tutorial.text = "";
-        while (Tutorial.text.Length < tutorial.Length)
+        while (Tutorial.text.Length < CurrentAdvice.Length)
         {
             yield return new WaitForSeconds(0.05f);
             Tutorial.text += tutorial[0];
