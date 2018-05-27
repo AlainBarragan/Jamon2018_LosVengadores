@@ -88,7 +88,7 @@ public class scr_History : MonoBehaviour {
                 scr_UI.UI.StartTutorial();
             } else
             {
-                SceneManager.LoadScene("Menu");
+                SceneManager.LoadScene("Menu", LoadSceneMode.Single);
             }
         }
     }

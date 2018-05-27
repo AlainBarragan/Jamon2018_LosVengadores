@@ -200,6 +200,9 @@ public class SCR_Atributable : MonoBehaviour
         if (rb.velocity.magnitude>2)
         {
             Destroy(Instantiate(GameManager.Fx_Dost, collision.contacts[0].point, Quaternion.identity),2f);
+        }
+        if (rb.velocity.magnitude > 6)
+        {
             if (GetComponent<AudioSource>())
                 GetComponent<AudioSource>().Play();
         }

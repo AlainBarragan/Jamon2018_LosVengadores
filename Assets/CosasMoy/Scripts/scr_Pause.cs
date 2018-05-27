@@ -50,6 +50,7 @@ public class scr_Pause : MonoBehaviour {
 
     public void GoMenu()
     {
-        SceneManager.LoadScene("Menu");
+        Time.timeScale = 1;
+        SceneManager.LoadScene("Menu", LoadSceneMode.Single);
     }
 }
