@@ -93,19 +93,20 @@ public class SCR_Atributable : MonoBehaviour
         {
             for (int i = 0; i < magnetico.Length; i++)
             {
-                magnetico[i].GetComponent<Rigidbody>().useGravity = false;
+                //magnetico[i].GetComponent<Rigidbody>().useGravity = false;
                 //magnetico[i].transform.position = Vector3.MoveTowards(magnetico[i].transform.position, this.transform.position, 5 * Time.deltaTime);
                 Vector3 direction = (transform.position - magnetico[i].transform.position).normalized;
-                magnetico[i].GetComponent<Rigidbody>().MovePosition(magnetico[i].transform.position+(direction*2f * Time.deltaTime));
+                magnetico[i].GetComponent<Rigidbody>().MovePosition(magnetico[i].transform.position+(direction*3f * Time.deltaTime));
                 if (magnetico[i].GetComponent<scr_plataform>())
-                    magnetico[i].GetComponent<scr_plataform>().MovePlayer( new Vector3(direction.x,0f,direction.z)* 1.8f*Time.deltaTime);
+                    magnetico[i].GetComponent<scr_plataform>().MovePlayer( new Vector3(direction.x,0f,direction.z)* 2.5f*Time.deltaTime);
             }
         }
     }
 
     void Girar()
     {
-        this.transform.Rotate(0, 0, 15);
+        rb.AddForce(Vector3.up*2f, ForceMode.Impulse);
+        this.transform.Rotate(0, 0, 30);
     }
     
     void Rebotable()

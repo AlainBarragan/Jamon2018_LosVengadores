@@ -866,7 +866,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!1 &1860976557993816
 GameObject:
   m_ObjectHideFlags: 1
@@ -3432,6 +3432,7 @@ MonoBehaviour:
   Shoot1: {fileID: 82432323528816600}
   Shoot2: {fileID: 82880095208138520}
   Recharge: {fileID: 82861715647792112}
+  ParentGuns: {fileID: 1974723380277646}
   T_Type: {fileID: 114413918339394526}
 --- !u!114 &114116799301468564
 MonoBehaviour:

@@ -17,6 +17,8 @@ public class scr_Gun : MonoBehaviour {
     public AudioSource Shoot2;
     public AudioSource Recharge;
 
+    public GameObject ParentGuns;
+
     public Text T_Type;
 
     Color[] CT = new Color[4] { Color.yellow, Color.green , Color.red , Color.blue };
@@ -27,6 +29,7 @@ public class scr_Gun : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
+        ParentGuns.transform.GetChild(scr_Pstatics.WpModel).gameObject.SetActive(true);
         TypeShoot = 1;
         sTypes[0] = scr_Lang.GetText("txt_game_info_02");
         sTypes[1] = scr_Lang.GetText("txt_game_info_03");

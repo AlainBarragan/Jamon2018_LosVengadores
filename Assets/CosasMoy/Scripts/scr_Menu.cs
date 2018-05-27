@@ -8,6 +8,9 @@ public class scr_Menu : MonoBehaviour {
 
     public GameObject Loading;
 
+    public Dropdown Resolution;
+    public Toggle FullScr;
+
     public static SaveGameFree.scr_DataPalyer MyData;
     public static string fileName = "PlayerData";
 
@@ -27,6 +30,8 @@ public class scr_Menu : MonoBehaviour {
     void Start () {
         scr_Pstatics.Op_Resol = MyData.Op_Resol;
         scr_Pstatics.Op_Fullscr = MyData.Op_Fullscr;
+        Resolution.value = scr_Pstatics.Op_Resol;
+        FullScr.isOn = scr_Pstatics.Op_Fullscr;
         SetResolution();
     }
 
@@ -49,9 +54,9 @@ public class scr_Menu : MonoBehaviour {
         SaveDataPlayer();
     }
 
-    public void ChangeResolution(int res)
+    public void ChangeResolution()
     {
-        scr_Pstatics.Op_Resol = res;
+        scr_Pstatics.Op_Resol = Resolution.value;
         SetResolution();
         SaveDataPlayer();
     }
@@ -83,10 +88,16 @@ public class scr_Menu : MonoBehaviour {
         }
     }
 
-    public void SetFullScr(bool full)
+    public void SetFullScr()
     {
-        Screen.fullScreen = full;
-        scr_Pstatics.Op_Fullscr = full;
+        Screen.fullScreen = FullScr.isOn;
+        scr_Pstatics.Op_Fullscr = FullScr.isOn;
+        SaveDataPlayer();
+    }
+
+    public void SetModelWp(int model)
+    {
+        scr_Pstatics.WpModel = model;
         SaveDataPlayer();
     }
 
@@ -95,6 +106,7 @@ public class scr_Menu : MonoBehaviour {
         MyData.Op_Fullscr = scr_Pstatics.Op_Fullscr;
         MyData.Op_Lang = scr_Pstatics.Op_Lang;
         MyData.Op_Resol = scr_Pstatics.Op_Resol;
+        MyData.Op_ModelWp = scr_Pstatics.WpModel;
         SaveGameFree.Saver.Save(MyData, fileName);
     }
 
