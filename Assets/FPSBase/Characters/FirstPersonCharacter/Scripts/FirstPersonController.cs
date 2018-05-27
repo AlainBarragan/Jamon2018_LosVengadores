@@ -42,11 +42,14 @@ namespace UnityStandardAssets.Characters.FirstPerson
         private bool m_Jumping;
         private AudioSource m_AudioSource;
 
+        scr_Player player;
+
         public Animator AnimatorWeapon;
 
         // Use this for initialization
         private void Start()
         {
+            player = FindObjectOfType<scr_Player>();
             m_CharacterController = GetComponent<CharacterController>();
             m_Camera = Camera.main;
             m_OriginalCameraPosition = m_Camera.transform.localPosition;
@@ -83,6 +86,8 @@ namespace UnityStandardAssets.Characters.FirstPerson
             }
 
             m_PreviouslyGrounded = m_CharacterController.isGrounded;
+            
+
         }
 
 
@@ -215,13 +220,15 @@ namespace UnityStandardAssets.Characters.FirstPerson
             float horizontal = CrossPlatformInputManager.GetAxis("Horizontal");
             float vertical = CrossPlatformInputManager.GetAxis("Vertical");
 
-            if (horizontal == 0 && vertical == 0)
-            {
-                AnimatorWeapon.SetBool("Move", false);
-            } else
-            {
-                AnimatorWeapon.SetBool("Move", true);
-            }
+
+                if (horizontal == 0 && vertical == 0)
+                {
+                    AnimatorWeapon.SetBool("Move", false);
+                }
+                else
+                {
+                    AnimatorWeapon.SetBool("Move", true);
+                }
 
             bool waswalking = m_IsWalking;
 

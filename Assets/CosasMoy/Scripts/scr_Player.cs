@@ -6,8 +6,12 @@ public class scr_Player : MonoBehaviour {
 
     [HideInInspector]
     public GameObject LastCheckPoint;
+    public GameObject pong;
 
+    Camera cam;
+    SCR_Maquinita maquinita;
     public bool Death;
+    public bool jugando;
 
     public static int Deaths = 0;
 
@@ -19,7 +23,10 @@ public class scr_Player : MonoBehaviour {
     public AudioSource Restart;
 
     // Use this for initialization
-    void Start () {
+    void Start ()
+    {
+        cam = Camera.main;
+        maquinita = FindObjectOfType<SCR_Maquinita>();
         Death = false;
         achivements = FindObjectOfType<SCR_Achivements>();
     }
@@ -43,7 +50,22 @@ public class scr_Player : MonoBehaviour {
             }
             Restart.Play();
         }
-	}
+        if (Input.GetButtonDown("PlayMaquinita") && maquinita.GetEnRango() && !jugando)
+        {
+            jugando = true;
+            pong.SetActive(true);
+            cam.gameObject.SetActive(false);
+            GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+        }
+        else if (Input.GetButtonDown("PlayMaquinita") && jugando)
+        {
+            jugando = false;
+            pong.SetActive(false);
+            GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
+            cam.gameObject.SetActive(true);
+        }
+
+    }
 
     private void OnTriggerEnter(Collider other)
     {
