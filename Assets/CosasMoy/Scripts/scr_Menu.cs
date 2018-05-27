@@ -6,10 +6,6 @@ using UnityEngine.SceneManagement;
 
 public class scr_Menu : MonoBehaviour {
 
-    public Dropdown Lang;
-    public Dropdown Reso;
-    public Toggle FullScreen;
-
     public GameObject Loading;
 
     public static SaveGameFree.scr_DataPalyer MyData;
@@ -32,10 +28,6 @@ public class scr_Menu : MonoBehaviour {
         scr_Pstatics.Op_Resol = MyData.Op_Resol;
         scr_Pstatics.Op_Fullscr = MyData.Op_Fullscr;
         SetResolution();
-
-        Lang.value = scr_Pstatics.Op_Lang;
-        Reso.value = scr_Pstatics.Op_Resol;
-        FullScreen.isOn = scr_Pstatics.Op_Fullscr;
     }
 
     public void PlayGame()
@@ -50,16 +42,16 @@ public class scr_Menu : MonoBehaviour {
         SceneManager.LoadScene("Game");
     }
 
-    public void ChangeLeng()
+    public void ChangeLeng(int lan)
     {
-        scr_Pstatics.Op_Lang = Lang.value;
+        scr_Pstatics.Op_Lang = lan;
         scr_Lang.setLanguage();
         SaveDataPlayer();
     }
 
-    public void ChangeResolution()
+    public void ChangeResolution(int res)
     {
-        scr_Pstatics.Op_Resol = Reso.value;
+        scr_Pstatics.Op_Resol = res;
         SetResolution();
         SaveDataPlayer();
     }
@@ -91,10 +83,10 @@ public class scr_Menu : MonoBehaviour {
         }
     }
 
-    public void SetFullScr()
+    public void SetFullScr(bool full)
     {
-        Screen.fullScreen = FullScreen.isOn;
-        scr_Pstatics.Op_Fullscr = FullScreen.isOn;
+        Screen.fullScreen = full;
+        scr_Pstatics.Op_Fullscr = full;
         SaveDataPlayer();
     }
 
