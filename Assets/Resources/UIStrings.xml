@@ -10,6 +10,8 @@
     <string name="txt_game_info_04">Bounce</string>
     <string name="txt_game_info_05">Gravity</string>
     <string name="txt_game_info_06">Press R or Select To Restart</string>
+    <string name="txt_game_info_07">Use the D-Pad to change the weapon firing mode.</string>
+    <string name="txt_game_info_08">Shoot the objects to change their phisycs properties.</string>
 
     <string name="txt_tutorial_01">Press A to Jump</string>
 
@@ -39,6 +41,8 @@
     <string name="txt_menu_info_09">Loading...</string>
     <string name="txt_menu_info_10">Next</string>
     <string name="txt_menu_info_11">[X] Next dialog</string>
+    <string name="txt_menu_info_12">Video</string>
+    <string name="txt_menu_info_13">Sound</string>
 
     <string name="txt_history_01">Navigator A17's log</string>
     <string name="txt_history_02">State: Critical</string>
@@ -70,6 +74,8 @@
     <string name="txt_game_info_04">Rebote</string>
     <string name="txt_game_info_05">Gravedad</string>
     <string name="txt_game_info_06">Usa R o Select para reiniciar</string>
+    <string name="txt_game_info_07">Utiliza el D-Pad para cambiar la modalidad del arma.</string>
+    <string name="txt_game_info_08">Dispara a los objetos para modificar sus propiedades fisicas.</string>
 
     <string name="txt_tutorial_01">Usa A para Saltar</string>
 
@@ -99,6 +105,8 @@
     <string name="txt_menu_info_09">Cargando...</string>
     <string name="txt_menu_info_10">Siguiente</string>
     <string name="txt_menu_info_11">[X] Siguiente dialogo</string>
+    <string name="txt_menu_info_12">Video</string>
+    <string name="txt_menu_info_13">Sonido</string>
 
     <string name="txt_history_01">Reporte del Navegante A17</string>
     <string name="txt_history_02">Estado: Critico</string>

@@ -83,6 +83,7 @@ public class scr_History : MonoBehaviour {
                 Player.SetActive(true);
                 BaseCamera.SetActive(false);
                 GetComponent<Animator>().SetTrigger("FadeOut");
+                scr_UI.UI.StartTutorial();
             } else
             {
                 SceneManager.LoadScene("Menu");

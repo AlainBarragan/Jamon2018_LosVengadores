@@ -9,6 +9,8 @@ public class scr_UI : MonoBehaviour {
 
     public GameObject GameOver;
     public scr_History Hystory;
+    public Text Tutorial;
+    string tutorial;
 
     private void Awake()
     {
@@ -17,11 +19,36 @@ public class scr_UI : MonoBehaviour {
 
     // Use this for initialization
     void Start () {
-		
-	}
+        tutorial = scr_Lang.GetText("txt_game_info_07");
+    }
+
+    IEnumerator ShowTutorial()
+    {
+        yield return new WaitForSeconds(3f);
+        while (Tutorial.text.Length<tutorial.Length)
+        {
+            yield return new WaitForSeconds(0.05f);
+            Tutorial.text += tutorial[0];
+            tutorial = tutorial.Substring(1);
+        }
+        yield return new WaitForSeconds(4f);
+        tutorial = scr_Lang.GetText("txt_game_info_08");
+        Tutorial.text = "";
+        while (Tutorial.text.Length < tutorial.Length)
+        {
+            yield return new WaitForSeconds(0.05f);
+            Tutorial.text += tutorial[0];
+            tutorial = tutorial.Substring(1);
+        }
+        yield return new WaitForSeconds(4f);
+        Tutorial.gameObject.SetActive(false);
+    }
+
+    public void StartTutorial()
+    {
+        Tutorial.transform.parent.gameObject.SetActive(true);
+        Tutorial.text = "";
+        StartCoroutine(ShowTutorial());
+    }
 	
-	// Update is called once per frame
-	void Update () {
-		
-	}
 }
