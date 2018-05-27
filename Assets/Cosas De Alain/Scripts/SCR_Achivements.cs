@@ -1,6 +1,8 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
+
 
 public class SCR_Achivements : MonoBehaviour 
 {
@@ -13,11 +15,27 @@ public class SCR_Achivements : MonoBehaviour
      * final secreto = 5
      * usar maquinita = 6
      * konami code = 7
-    */ 
+    */
 
+
+    public Text achText;
+    float timer;
+        
     private void Start()
     {
+        achText.text = "";
+        timer = 0;
         ResetAchivements();
+    }
+
+    private void Update()
+    {
+        if (timer < 5)
+            timer += Time.deltaTime;
+        else if (timer >= 5)
+        {
+            achText.text = "";
+        }
     }
 
     public void CheckAchivement(int num)
@@ -32,7 +50,7 @@ public class SCR_Achivements : MonoBehaviour
 
     void GetAchivement(int num)
     {
-        string achivement = "Logro Desbloqueado: ";
+        string achivement = "";
         switch (num)
         {
             case 1:
@@ -74,7 +92,8 @@ public class SCR_Achivements : MonoBehaviour
                 achivement = achivement + "y aun asi gira";
                 break;
         }
-        Debug.Log(achivement);
+        achText.text =  achivement;
+        timer = 0;
     }
 
     void ResetAchivements()

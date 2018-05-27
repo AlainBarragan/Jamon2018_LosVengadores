@@ -127,7 +127,6 @@ public class SCR_Atributable : MonoBehaviour
         {
             case 1:
                 {
-                    achivements.CheckAchivement(3);
                     atributo = ATRIBUTO.Iman;
                     GetComponentInChildren<MeshRenderer>().material = GameManager.GM.TypesM[0];
                     Debug.Log("Soy muy atractivo ;)");
@@ -144,7 +143,6 @@ public class SCR_Atributable : MonoBehaviour
                 break;
             case 3:
                 {
-                    achivements.CheckAchivement(1);
                     atributo = ATRIBUTO.Rebotable;
                     GetComponentInChildren<MeshRenderer>().material = GameManager.GM.TypesM[2];
                     Rebotable();
@@ -181,6 +179,7 @@ public class SCR_Atributable : MonoBehaviour
         {
             if (magnetico.Length > 0)
             {
+                achivements.CheckAchivement(3);
                 for (int i = 0; i < magnetico.Length; i++)
                 {
                     //magnetico[i].GetComponent<Rigidbody>().useGravity = startGravity;
@@ -207,6 +206,7 @@ public class SCR_Atributable : MonoBehaviour
         Rigidbody orb = collision.gameObject.GetComponent<Rigidbody>();
         if (atributo == ATRIBUTO.Rebotable && orb != null)
         {
+            achivements.CheckAchivement(1);
             if (orb.velocity.magnitude < 10)
                 orb.velocity *= 1.5f;
 
