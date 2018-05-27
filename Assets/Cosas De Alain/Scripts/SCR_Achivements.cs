@@ -25,7 +25,7 @@ public class SCR_Achivements : MonoBehaviour
     {
         achText.text = "";
         timer = 0;
-        ResetAchivements();
+        //ResetAchivements();
     }
 
     private void Update()

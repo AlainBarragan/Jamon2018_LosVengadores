@@ -19,7 +19,7 @@ public class SCR_PongMeta : MonoBehaviour
     public void reiniciar()
     {
         SCR_Bolita_Pong bol = FindObjectOfType<SCR_Bolita_Pong>();
-        bol.transform.position = Vector2.zero;
+        bol.transform.localPosition = Vector2.zero;
         bol.gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.right * 30;
     }
 }
