@@ -11,6 +11,8 @@ public class scr_Gun : MonoBehaviour {
     float CD = 0f;
     float CD2 = 0f;
 
+    public Animator AnimGun;
+
     [HideInInspector]
     int TypeShoot;
 
@@ -53,9 +55,10 @@ public class scr_Gun : MonoBehaviour {
             CD2 -= Time.deltaTime;
 
         if (Input.GetButtonDown("Fire1") || Input.GetAxis("Fire1")<-0.5f)
-        {
+        {   
             if (CD<=0f)
             {
+                AnimGun.SetTrigger("Shoot");
                 GameObject bullet =  Instantiate(GameManager.Bullet, Cannon.transform.position, Cannon.transform.rotation);
                 bullet.GetComponent<scr_bullet>().TypeShoot = TypeShoot;
                 /*
@@ -79,6 +82,7 @@ public class scr_Gun : MonoBehaviour {
         {
             if (CD2 <= 0f)
             {
+                AnimGun.SetTrigger("Shoot");
                 GameObject bullet = Instantiate(GameManager.Bullet, Cannon.transform.position, Cannon.transform.rotation);
                 /*
                 Ray shoot = new Ray(Cannon.transform.position, Cannon.transform.forward);
