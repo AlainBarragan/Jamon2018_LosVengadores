@@ -13,8 +13,13 @@ public class scr_Player : MonoBehaviour {
 
     SCR_Achivements achivements;
 
-	// Use this for initialization
-	void Start () {
+    public Animator AnimGun;
+
+    public AudioSource GameOver;
+    public AudioSource Restart;
+
+    // Use this for initialization
+    void Start () {
         Death = false;
         achivements = FindObjectOfType<SCR_Achivements>();
     }
@@ -36,6 +41,7 @@ public class scr_Player : MonoBehaviour {
                 Death = false;
                 scr_UI.UI.GameOver.SetActive(false);
             }
+            Restart.Play();
         }
 	}
 
@@ -71,8 +77,10 @@ public class scr_Player : MonoBehaviour {
         GetComponent<scr_Gun>().enabled = false;
         GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
         Death = true;
+        AnimGun.SetTrigger("Die");
         Deaths++;
         scr_UI.UI.GameOver.SetActive(true);
+        GameOver.Play();
     }
 
 }

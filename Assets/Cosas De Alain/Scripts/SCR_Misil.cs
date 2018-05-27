@@ -21,8 +21,9 @@ public class SCR_Misil : MonoBehaviour
     {
         if(c.gameObject.CompareTag("Player"))
         {
-
+            c.gameObject.SendMessage("Die");
         }
+        Destroy(Instantiate(GameManager.Fx_Explo, transform.position, Quaternion.identity), 5f);
         Destroy(this.gameObject);
     }
 }

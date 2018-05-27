@@ -13,6 +13,7 @@ public class GameManager : MonoBehaviour
     public static GameObject Bullet;
     public static GameObject Fx_Dost;
     public static GameObject Fx_Spark;
+    public static GameObject Fx_Explo;
 
     private void Awake()
     {
@@ -33,6 +34,9 @@ public class GameManager : MonoBehaviour
 
         Fx_Dost = Resources.Load("PS_Dust") as GameObject;
         if (Fx_Dost == null) { Debug.LogError("Error Loading prefab"); }
+
+        Fx_Explo = Resources.Load("PS_Explo") as GameObject;
+        if (Fx_Explo == null) { Debug.LogError("Error Loading prefab"); }
     }
 
     public GameObject getObjeto()

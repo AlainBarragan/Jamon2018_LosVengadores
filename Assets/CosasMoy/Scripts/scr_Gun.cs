@@ -13,6 +13,10 @@ public class scr_Gun : MonoBehaviour {
 
     public Animator AnimGun;
 
+    public AudioSource Shoot1;
+    public AudioSource Shoot2;
+    public AudioSource Recharge;
+
     [HideInInspector]
     int TypeShoot;
 
@@ -29,6 +33,7 @@ public class scr_Gun : MonoBehaviour {
             TypeShoot++;
             if (TypeShoot > 4)
                 TypeShoot = 1;
+            Recharge.Play();
         }
 
         if (Input.GetButtonDown("PrevW"))
@@ -36,16 +41,29 @@ public class scr_Gun : MonoBehaviour {
             TypeShoot--;
             if (TypeShoot < 1)
                 TypeShoot = 4;
+            Recharge.Play();
         }
 
         if (Input.GetAxis("DpadX") > 0.5)
+        {
+            Recharge.Play();
             TypeShoot = 1;
+        }
         if (Input.GetAxis("DpadX") < -0.5)
+        {
             TypeShoot = 2;
+            Recharge.Play();
+        }
         if (Input.GetAxis("DpadY") < -0.5)
+        {
             TypeShoot = 3;
+            Recharge.Play();
+        }
         if (Input.GetAxis("DpadY") > 0.5)
+        {
             TypeShoot = 4;
+            Recharge.Play();
+        }
 
         scr_UI.UI.TypeW.text = TypeShoot.ToString();
 
@@ -58,6 +76,7 @@ public class scr_Gun : MonoBehaviour {
         {   
             if (CD<=0f)
             {
+                Shoot1.Play();
                 AnimGun.SetTrigger("Shoot");
                 GameObject bullet =  Instantiate(GameManager.Bullet, Cannon.transform.position, Cannon.transform.rotation);
                 bullet.GetComponent<scr_bullet>().TypeShoot = TypeShoot;
@@ -82,6 +101,7 @@ public class scr_Gun : MonoBehaviour {
         {
             if (CD2 <= 0f)
             {
+                Shoot2.Play();
                 AnimGun.SetTrigger("Shoot");
                 GameObject bullet = Instantiate(GameManager.Bullet, Cannon.transform.position, Cannon.transform.rotation);
                 /*
