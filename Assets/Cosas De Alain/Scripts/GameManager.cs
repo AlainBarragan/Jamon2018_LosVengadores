@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     public static GameObject Fx_Spark;
     public static GameObject Fx_Explo;
 
+    public Material[] TypesM = new Material[4];
+
     private void Awake()
     {
         GM = this;

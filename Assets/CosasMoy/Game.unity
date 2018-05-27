@@ -2332,7 +2332,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4292320703876306, guid: ec1bf7627d9d42d4a944cc8187939931, type: 2}
       propertyPath: m_RootOrder
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 1161081626367974, guid: ec1bf7627d9d42d4a944cc8187939931, type: 2}
       propertyPath: m_IsActive
@@ -6514,7 +6514,7 @@ Prefab:
     - target: {fileID: 224797632678929572, guid: a80c46c4586a85e449417aee364e702b,
         type: 2}
       propertyPath: m_RootOrder
-      value: 6
+      value: 7
       objectReference: {fileID: 0}
     - target: {fileID: 224797632678929572, guid: a80c46c4586a85e449417aee364e702b,
         type: 2}
@@ -9664,6 +9664,11 @@ Prefab:
       propertyPath: NextLR
       value: 
       objectReference: {fileID: 2008782338}
+    - target: {fileID: 114282142547424060, guid: bae043843a8772d4d97722eb5d00ac79,
+        type: 2}
+      propertyPath: CloseDoor
+      value: 
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: bae043843a8772d4d97722eb5d00ac79, type: 2}
   m_IsPrefabParent: 0
@@ -10078,7 +10083,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4749340374422636, guid: ccc4c9ca3252e2a4b87490f78dbcef92, type: 2}
       propertyPath: m_RootOrder
-      value: 5
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 114008456856234680, guid: ccc4c9ca3252e2a4b87490f78dbcef92,
         type: 2}
@@ -16630,6 +16635,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 187535166af1737428b66dddd1c0a833, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  TypesM:
+  - {fileID: 2100000, guid: c573116d667ab9f46a991e710db14b3b, type: 2}
+  - {fileID: 2100000, guid: 7eec73a8be947844b9e0f53d6a9e1835, type: 2}
+  - {fileID: 2100000, guid: 0660978ad389ae740a0e951a080f2567, type: 2}
+  - {fileID: 2100000, guid: 35f247ea5126cb245a8841cc9e7bf19f, type: 2}
 --- !u!4 &2043728766
 Transform:
   m_ObjectHideFlags: 0

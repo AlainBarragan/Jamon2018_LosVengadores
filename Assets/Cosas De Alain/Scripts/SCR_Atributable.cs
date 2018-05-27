@@ -24,6 +24,7 @@ public class SCR_Atributable : MonoBehaviour
     Vector3 StartScale;
     Vector3 StartVelocity;
     Quaternion StartRotation;
+    Material StartMaterial;
     ATRIBUTO StartAtributo;
 
     private void Start()
@@ -39,6 +40,7 @@ public class SCR_Atributable : MonoBehaviour
         StartScale = transform.localScale;
         StartRotation = transform.rotation;
         StartVelocity = rb.velocity;
+        StartMaterial = GetComponentInChildren<MeshRenderer>().material;
     }
 
     private void Update()
@@ -76,6 +78,7 @@ public class SCR_Atributable : MonoBehaviour
         rb.useGravity = startGravity;
         rb.velocity = StartVelocity;
         this.GetComponent<BoxCollider>().material = normal;
+        GetComponentInChildren<MeshRenderer>().material = StartMaterial;
     }
 
     void Flotar()
@@ -120,14 +123,15 @@ public class SCR_Atributable : MonoBehaviour
                 {
                     achivements.CheckAchivement(3);
                     atributo = ATRIBUTO.Iman;
+                    GetComponentInChildren<MeshRenderer>().material = GameManager.GM.TypesM[0];
                     Debug.Log("Soy muy atractivo ;)");
-
                 }
                 break;
             case 2:
                 {
                     achivements.CheckAchivement(0);
                     atributo = ATRIBUTO.Girar;
+                    GetComponentInChildren<MeshRenderer>().material = GameManager.GM.TypesM[1];
                     Debug.Log("Estoy girando yay");
                     Girar();
                 }
@@ -136,6 +140,7 @@ public class SCR_Atributable : MonoBehaviour
                 {
                     achivements.CheckAchivement(1);
                     atributo = ATRIBUTO.Rebotable;
+                    GetComponentInChildren<MeshRenderer>().material = GameManager.GM.TypesM[2];
                     Rebotable();
                 }
                 break;
@@ -148,12 +153,14 @@ public class SCR_Atributable : MonoBehaviour
                     {
                         rb.AddForce(Vector3.up, ForceMode.Impulse);
                     }
+                    GetComponentInChildren<MeshRenderer>().material = GameManager.GM.TypesM[3];
                     Debug.Log("Aqui todos Flotan");
                 }
                 break;
             default:
                 {
                     atributo = ATRIBUTO.Neutral;
+                    GetComponentInChildren<MeshRenderer>().material = StartMaterial;
                     Debug.Log("Todo vuelve a la normalidad");
                 }
                 break;

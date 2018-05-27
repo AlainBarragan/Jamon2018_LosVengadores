@@ -15,7 +15,8 @@ public class scr_LoadRoom : MonoBehaviour {
     {
         if (other.CompareTag("Player"))
         {
-            CloseDoor.Closed = true;
+            if (CloseDoor!=null)
+                CloseDoor.Closed = true;
             Destroy(LastRoom);
             NextRoom.SetActive(true);
             NextLR.SetActive(true);
