@@ -18,6 +18,7 @@ public class SCR_Atributable : MonoBehaviour
     PhysicMaterial phMat, normal;
     Rigidbody rb;
 
+    SCR_Achivements achivements;
     bool startGravity;
     Vector3 StartPosition;
     Vector3 StartScale;
@@ -27,6 +28,7 @@ public class SCR_Atributable : MonoBehaviour
 
     private void Start()
     {
+        achivements = FindObjectOfType<SCR_Achivements>();
         phMat = GameManager.phMat;
         normal = GameManager.normal;
         rb = this.GetComponent<Rigidbody>();
@@ -116,12 +118,15 @@ public class SCR_Atributable : MonoBehaviour
         {
             case 1:
                 {
+                    achivements.CheckAchivement(3);
                     atributo = ATRIBUTO.Iman;
                     Debug.Log("Soy muy atractivo ;)");
+
                 }
                 break;
             case 2:
                 {
+                    achivements.CheckAchivement(0);
                     atributo = ATRIBUTO.Girar;
                     Debug.Log("Estoy girando yay");
                     Girar();
@@ -129,12 +134,14 @@ public class SCR_Atributable : MonoBehaviour
                 break;
             case 3:
                 {
+                    achivements.CheckAchivement(1);
                     atributo = ATRIBUTO.Rebotable;
                     Rebotable();
                 }
                 break;
             case 4:
                 {
+                    achivements.CheckAchivement(2);
                     atributo = ATRIBUTO.Gravedad;
                     rb.useGravity = !rb.useGravity;
                     if (!rb.useGravity)

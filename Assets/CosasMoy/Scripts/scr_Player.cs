@@ -11,10 +11,12 @@ public class scr_Player : MonoBehaviour {
 
     public static int Deaths = 0;
 
+    SCR_Achivements achivements;
+
 	// Use this for initialization
 	void Start () {
         Death = false;
-        
+        achivements = FindObjectOfType<SCR_Achivements>();
     }
 	
 	// Update is called once per frame
@@ -55,10 +57,12 @@ public class scr_Player : MonoBehaviour {
         if (other.CompareTag("WinGame"))
         {
             scr_UI.UI.Hystory.SetHistory(1);
+            achivements.CheckAchivement(4);
         }
         if (other.CompareTag("OtherEnd"))
         {
             scr_UI.UI.Hystory.SetHistory(2);
+            achivements.CheckAchivement(5);
         }
     }
 
