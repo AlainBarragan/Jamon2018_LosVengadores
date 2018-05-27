@@ -6,6 +6,7 @@ public class scr_LoadRoom : MonoBehaviour {
 
     public GameObject LastRoom;
     public GameObject NextRoom;
+    public GameObject NextLR;
 
     public scr_Door CloseDoor;
 
@@ -17,6 +18,7 @@ public class scr_LoadRoom : MonoBehaviour {
             CloseDoor.Closed = true;
             Destroy(LastRoom);
             NextRoom.SetActive(true);
+            NextLR.SetActive(true);
             Destroy(gameObject);
         }
     }

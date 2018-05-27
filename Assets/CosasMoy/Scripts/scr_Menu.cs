@@ -47,7 +47,7 @@ public class scr_Menu : MonoBehaviour {
     {
         Loading.SetActive(true);
         yield return new WaitForSeconds(0.1f);
-        //Load Scene
+        SceneManager.LoadScene("Game");
     }
 
     public void ChangeLeng()

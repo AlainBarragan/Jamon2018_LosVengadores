@@ -8,3 +8,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/CosasMoy/Menu.unity
     guid: 199945ff54869f1438e9f51f94d35fe2
+  - enabled: 1
+    path: Assets/CosasMoy/Tutorial.unity
+    guid: 90559256b52e85a48b7d17bcb956479d
