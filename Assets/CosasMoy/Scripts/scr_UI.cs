@@ -7,7 +7,6 @@ public class scr_UI : MonoBehaviour {
 
     public static scr_UI UI;
 
-    public Text TypeW;
     public GameObject GameOver;
     public scr_History Hystory;
 

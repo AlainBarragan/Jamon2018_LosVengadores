@@ -17,13 +17,21 @@ public class scr_Gun : MonoBehaviour {
     public AudioSource Shoot2;
     public AudioSource Recharge;
 
+    public Text T_Type;
+
+    Color[] CT = new Color[4] { Color.yellow, Color.green , Color.red , Color.blue };
+    string[] sTypes = new string[4];
+
     [HideInInspector]
     int TypeShoot;
 
     // Use this for initialization
     void Start () {
         TypeShoot = 1;
-
+        sTypes[0] = scr_Lang.GetText("txt_game_info_02");
+        sTypes[1] = scr_Lang.GetText("txt_game_info_03");
+        sTypes[2] = scr_Lang.GetText("txt_game_info_04");
+        sTypes[3] = scr_Lang.GetText("txt_game_info_05");
     }
 	
 	// Update is called once per frame
@@ -65,7 +73,8 @@ public class scr_Gun : MonoBehaviour {
             Recharge.Play();
         }
 
-        scr_UI.UI.TypeW.text = TypeShoot.ToString();
+        T_Type.text = sTypes[TypeShoot - 1];
+        T_Type.color = CT[TypeShoot-1];
 
         if (CD > 0f)
             CD -= Time.deltaTime;
@@ -80,20 +89,6 @@ public class scr_Gun : MonoBehaviour {
                 AnimGun.SetTrigger("Shoot");
                 GameObject bullet =  Instantiate(GameManager.Bullet, Cannon.transform.position, Cannon.transform.rotation);
                 bullet.GetComponent<scr_bullet>().TypeShoot = TypeShoot;
-                /*
-                Ray shoot = new Ray(Cannon.transform.position, Cannon.transform.forward);
-                RaycastHit hit;
-                Physics.Raycast(shoot, out hit, MaskShoot);
-                if (hit.transform != null)
-                {
-                    if (hit.transform.gameObject.CompareTag("Atributable"))
-                    {
-                        hit.transform.gameObject.SendMessage("CambiarAtributo", TypeShoot);
-                    }
-                    GameObject hitef = Instantiate(HitEffect, hit.point, Quaternion.identity);
-                    Destroy(hitef, 0.5f);
-                }
-                */
                 CD = 0.5f;
             }
         }
@@ -104,20 +99,6 @@ public class scr_Gun : MonoBehaviour {
                 Shoot2.Play();
                 AnimGun.SetTrigger("Shoot");
                 GameObject bullet = Instantiate(GameManager.Bullet, Cannon.transform.position, Cannon.transform.rotation);
-                /*
-                Ray shoot = new Ray(Cannon.transform.position, Cannon.transform.forward);
-                RaycastHit hit;
-                Physics.Raycast(shoot, out hit, MaskShoot);
-                if (hit.transform != null)
-                {
-                    if (hit.transform.gameObject.CompareTag("Atributable"))
-                    {
-                        hit.transform.gameObject.SendMessage("CambiarAtributo", num);
-                    }
-                    GameObject hitef = Instantiate(HitEffect, hit.point, Quaternion.identity);
-                    Destroy(hitef, 0.5f);
-                }
-                */
                 CD2 = 0.5f;
             }
         }

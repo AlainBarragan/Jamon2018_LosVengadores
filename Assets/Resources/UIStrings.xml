@@ -5,6 +5,11 @@
     <string name="txt_game_title">Master Space</string>
     
     <string name="txt_game_info_01">Victory!</string>
+    <string name="txt_game_info_02">Magnet</string>
+    <string name="txt_game_info_03">Rotate</string>
+    <string name="txt_game_info_04">Bounce</string>
+    <string name="txt_game_info_05">Gravity</string>
+    <string name="txt_game_info_06">Press R or Select To Restart</string>
 
     <string name="txt_tutorial_01">Press A to Jump</string>
 
@@ -60,6 +65,11 @@
     <string name="txt_game_title">Master Space</string>
 
     <string name="txt_game_info_01">Victoria!</string>
+    <string name="txt_game_info_02">Iman</string>
+    <string name="txt_game_info_03">Giro</string>
+    <string name="txt_game_info_04">Rebote</string>
+    <string name="txt_game_info_05">Gravedad</string>
+    <string name="txt_game_info_06">Usa R o Select para reiniciar</string>
 
     <string name="txt_tutorial_01">Usa A para Saltar</string>
 

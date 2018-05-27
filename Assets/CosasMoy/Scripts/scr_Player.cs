@@ -47,6 +47,7 @@ public class scr_Player : MonoBehaviour {
                 GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = true;
                 Death = false;
                 scr_UI.UI.GameOver.SetActive(false);
+                AnimGun.SetTrigger("Restart");
             }
             Restart.Play();
         }
