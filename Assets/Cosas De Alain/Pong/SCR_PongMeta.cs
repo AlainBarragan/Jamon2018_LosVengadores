@@ -16,7 +16,7 @@ public class SCR_PongMeta : MonoBehaviour
         reiniciar();
     }
 
-    void reiniciar()
+    public void reiniciar()
     {
         SCR_Bolita_Pong bol = FindObjectOfType<SCR_Bolita_Pong>();
         bol.transform.position = Vector2.zero;

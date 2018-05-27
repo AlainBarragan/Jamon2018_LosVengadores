@@ -56,6 +56,7 @@ public class scr_Player : MonoBehaviour {
             pong.SetActive(true);
             cam.gameObject.SetActive(false);
             GetComponent<UnityStandardAssets.Characters.FirstPerson.FirstPersonController>().enabled = false;
+            FindObjectOfType<SCR_PongMeta>().reiniciar();
         }
         else if (Input.GetButtonDown("PlayMaquinita") && jugando)
         {
