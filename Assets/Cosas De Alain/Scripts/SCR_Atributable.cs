@@ -170,7 +170,7 @@ public class SCR_Atributable : MonoBehaviour
             {
                 for (int i = 0; i < magnetico.Length; i++)
                 {
-                    magnetico[i].GetComponent<Rigidbody>().useGravity = startGravity;
+                    //magnetico[i].GetComponent<Rigidbody>().useGravity = startGravity;
                 }
             }
         }
